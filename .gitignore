@@ -34,6 +34,11 @@ nlia.cache
 nra.cache
 native_compute_profile_*.data
 
+# local Rocq build files
+/.build/
+/Makefile.rocq
+/Makefile.rocq.conf
+
 # generated timing files
 *.timing.diff
 *.v.after-timing

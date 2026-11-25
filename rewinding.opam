@@ -1,0 +1,30 @@
+opam-version: "2.0"
+name: "rewinding"
+version: "dev"
+synopsis: "Rewinding experiments in Rocq and SSProve"
+maintainer: "Rewinding contributors"
+authors: "Rewinding contributors"
+homepage: "https://github.com/ethanlee515/Rewinding"
+bug-reports: "https://github.com/ethanlee515/Rewinding/issues"
+dev-repo: "git+https://github.com/ethanlee515/Rewinding.git"
+
+depends: [
+  "rocq-core"
+  "rocq-mathcomp-boot"
+  "rocq-mathcomp-experimental-reals"
+  "rocq-ssprove" {= "dev"}
+  "mending" {= "dev"}
+]
+
+pin-depends: [
+  ["mending.dev" "git+https://github.com/ethanlee515/Mending.git#0061e41a48d6548401e954e4b90d942adee8e92c"]
+  ["rocq-ssprove.dev" "git+https://github.com/SSProve/ssprove.git#9a37fe0ab79d041f8d835e6cf18e37614b16a791"]
+]
+
+build: [
+  [make "-j%{jobs}%"]
+]
+
+install: [
+  [make "-f" "Makefile.rocq" "install"]
+]
