@@ -2,7 +2,7 @@
 
 Attempts to port reflection from EasyCrypt to SSProve.
 
-## Build the Rocq starter
+## Build the Rocq project
 
 With the `rewinding` opam switch active and the `rocq-released` repository
 enabled, run these commands from this checkout.
@@ -19,11 +19,10 @@ commits. Opam downloads and installs them in the switch. Both pins are listed
 because opam only processes the `pin-depends` of this checkout. Run `make
 clean` before building with a different switch or after changing dependencies.
 
-[CoinToss.v](theories/CoinToss.v) defines a checkpoint immediately before the
-committer receives the other party's bit. It gives the joint distribution of
-the two opening attempts, each starting from the saved heap. The next proof
-needs to obtain that heap and trace from the same execution and construct the
-binding adversary as an SSProve package.
+The default build checks [HelloWorld.v](theories/HelloWorld.v). The coin-toss
+starter and other prototypes live in `experiments/`. The research notes
+describe what each experiment proves and how to run it.
+[Rewinding experiments](notes/rewinding-experiments.md)
 
 ### Fresh checkout and switch
 
